@@ -1,0 +1,28 @@
+name: 'ag-workshop'
+description: 'A GitHub Action to upload items to the Steam Workshop'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.appID }}
+    - ${{ inputs.publishedFileID }}
+    - ${{ inputs.path }}
+    - ${{ inputs.changelog }}
+
+inputs:
+  appID:
+    description: "The App ID of the game/app to upload to (https://steamcommunity.com/app/[APPID]/workshop)"
+    required: true
+  publishedFileID:
+    description: "The Workshop ID of your item (https://steamcommunity.com/sharedfiles/filedetails/?id=[WORKSHOPID])"
+    required: true
+  path:
+    description: "The path to the content to upload, relative to your repository's root. Omit to use your repository's root"
+    required: false
+    default: ''
+  changelog:
+    description: "An optional note to accompany your update"
+    required: false
+    default: ''
+  
