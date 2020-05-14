@@ -1,5 +1,9 @@
-name: 'ag-workshop'
+name: 'upload-workshop-item'
 description: 'A GitHub Action to upload items to the Steam Workshop'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
 
 runs:
   using: 'docker'
